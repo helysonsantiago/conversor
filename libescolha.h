@@ -6,20 +6,6 @@
 #include "libvalor.h"
 
 
-char function(char[]);
-
-
-char function(char* string[]){
-
-	char string = str[];
-
-                string = strdup("pdf ");
-                return string;
-
-	return string;
-
-}
-
 
 
 
@@ -79,9 +65,7 @@ char* menu_conversor(){
 		switch(escolha) {
 			case 1:
 
-            	string[5]="png";
-				function(&string[0]);
-
+          
 				break;
 			case 2:
 
