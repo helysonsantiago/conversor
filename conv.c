@@ -1,12 +1,13 @@
+
+
 #include <stdio.h>
 #include <windows.h>
 #include <locale.h>
 #include <string.h>
 #include <conio.h>
 
+#include "conversor.h"
 
-/*Incluindo a biblioteca LIBESCOLHA*/
-#include "libescolha.h"
 
 int validator = 0;
 
@@ -123,9 +124,8 @@ void menu_usuario(){
 		system("cls");
 		
 	
-			
-		animacao2();
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
+		animacao2();
 		letreiro();
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		animacao2();
@@ -163,8 +163,6 @@ void menu_usuario(){
 				printf("\t\t\t\t\tOK!");
 				Sleep(1000);
                 menu_conversor();
-				menu_usuario();
-				
 				break;
 			case 2:
 				break;	

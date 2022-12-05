@@ -1,9 +1,8 @@
-#ifndef LIBVALOR_H
-#define LIBVALOR_H
+#ifndef FREE_H
+#define FREE_H
 
 #include <string.h>
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
 
 
@@ -15,4 +14,4 @@ void free_memory( char* ptr){
 
 
 
-#endif /*LIBVALOR_H*/
+#endif /*FREE_H*/
