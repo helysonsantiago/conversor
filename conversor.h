@@ -7,29 +7,22 @@
 #include <stdlib.h>
 #include "free.h"
 
-FILE *file;
+/*LIBS*/
 
 
-
-
-
-
+FILE *file;  /*Criando ponteiro*/
 
 
 char* menu_conversor(){
 
-
     int escolha;
 	char caminho[1000];
-	int i;
     char *string;
 	char png[4]={'p','n','g','\0'};    
 	char pdf[4]={'p','d','f','\0'};   
 	char jpg[4]={'j','p','g','\0'};    
 	char jpeg[5]={'j','p','e','g','\0'};
 	char docx[5]={'d','o','c','x','\0'};         
-
-	char *res;
 
         system("cls");
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
@@ -43,7 +36,7 @@ char* menu_conversor(){
 
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
 	    printf("\t\t\t\t PARA QUAL FORMATO VOCE QUER CONVERTER?");
-        
+
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
 		printf("\n\n\n\n\t\t\t\t\t    [1] ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
@@ -71,14 +64,14 @@ char* menu_conversor(){
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
 		printf("\n\n\n\n\n\t\t\t\t\t    --> :");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-		setbuf(stdin, 0);
+		fflush(stdin);
 		scanf("%i",&escolha);
 		
 
 		switch(escolha) {
 			case 1:
 
-				printf("\n\nInforme o caminho do arquivo com o formato EX :C:\\Desktop\\Workspace\\meuArquivo.pdf \n");
+				printf("\n\nInforme o nome do arquivo mais o formato EXEMPLO : teste.pdf \n");
 				printf("--> ");
 				scanf("%s", caminho);
 
@@ -105,27 +98,24 @@ char* menu_conversor(){
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
 				printf("-->");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-				setbuf(stdin, 0);	
+				fflush(stdin);	
 				scanf("%i",&escolha);
 				if (escolha == 1)
 				{
-					file=fopen("C:\\Users\\helys\\Desktop\\conversor\\caminho.txt","w");	
+					file=fopen("C:\\Users\\Lenovo\\Desktop\\conversor\\caminho.txt","w");	
 					fprintf(file, "%s", caminho);
-					printf("\nSalvando....");
-
+					fclose(file);
 					string = strdup(png);
-					Sleep(30000);
 					return string;
 
 				}else if(escolha == 2){
 					menu_conversor();
-				}// verificar aqui!!
-				
-		
+				}
+	
 				break;
 			case 2:
 
-				printf("\n\nInforme o caminho do arquivo com o formato EX :C:\\Desktop\\Workspace\\meuArquivo.pdf \n");
+				printf("\n\nIInforme o nome do arquivo mais o formato EXEMPLO : teste.pdf \n");
 				printf("--> ");
 				scanf("%s", caminho);
 
@@ -152,13 +142,14 @@ char* menu_conversor(){
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
 				printf("-->");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-				setbuf(stdin, 0);	
+				fflush(stdin);	
 				scanf("%i",&escolha);
 				if (escolha == 1)
 				{
-					file=fopen("C:\\Users\\helys\\Desktop\\conversor\\caminho.txt","w");	
+					file=fopen("C:\\Users\\Lenovo\\Desktop\\conversor\\caminho.txt","w");	
 					fprintf(file, "%s", caminho);
-
+					fclose(file);
+					printf("\nSalvando....");
 					string = strdup(pdf);
 					return string;
 
@@ -170,10 +161,9 @@ char* menu_conversor(){
 				break;	
 			case 3:
 
-				printf("\n\nInforme o caminho do arquivo com o formato EX :C:\\Desktop\\Workspace\\meuArquivo.pdf \n");
+				printf("\n\nInforme o nome do arquivo mais o formato EXEMPLO : teste.pdf \n");
 				printf("--> ");
 				scanf("%s", caminho);
-
 				printf("\nOpcoes selecionas:");
 				printf("\n____________________________");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
@@ -197,13 +187,14 @@ char* menu_conversor(){
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
 				printf("-->");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-				setbuf(stdin, 0);	
+				fflush(stdin);	
 				scanf("%i",&escolha);
 				if (escolha == 1)
 				{
-					file=fopen("C:\\Users\\helys\\Desktop\\conversor\\caminho.txt","w");	
+					file=fopen("C:\\Users\\Lenovo\\Desktop\\conversor\\caminho.txt","w");	
 					fprintf(file, "%s", caminho);
-
+					fclose(file);
+					printf("\nSalvando....");
 					string = strdup(jpg);
 					return string;
 
@@ -211,14 +202,12 @@ char* menu_conversor(){
 					menu_conversor();
 				}
 
-
 				break;	
 			case 4:
 
-              		printf("\n\nInforme o caminho do arquivo com o formato EX :C:\\Desktop\\Workspace\\meuArquivo.pdf \n");
+              	printf("\n\nInforme o nome do arquivo mais o formato EXEMPLO : teste.pdf  \n");
 				printf("--> ");
 				scanf("%s", caminho);
-
 				printf("\nOpcoes selecionas:");
 				printf("\n____________________________");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
@@ -242,28 +231,26 @@ char* menu_conversor(){
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
 				printf("-->");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-				setbuf(stdin, 0);	
+				fflush(stdin);	
 				scanf("%i",&escolha);
 				if (escolha == 1)
 				{
-					file=fopen("C:\\Users\\helys\\Desktop\\conversor\\caminho.txt","w");	
+					file=fopen("C:\\Users\\Lenovo\\Desktop\\conversor\\caminho.txt","w");	
 					fprintf(file, "%s", caminho);
-
+					fclose(file);
+					printf("\nSalvando....");
 					string = strdup(jpeg);
 					return string;
 
 				}else if(escolha == 2){
 					menu_conversor();
 				}
-
-				
 				break;
 			case 5:
 
-					printf("\n\nInforme o caminho do arquivo com o formato EX :C:\\Desktop\\Workspace\\meuArquivo.pdf \n");
+				printf("\n\nInforme o nome do arquivo mais o formato EXEMPLO : teste.pdf  \n");
 				printf("--> ");
 				scanf("%s", caminho);
-
 				printf("\nOpcoes selecionas:");
 				printf("\n____________________________");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
@@ -287,35 +274,32 @@ char* menu_conversor(){
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 1);
 				printf("-->");
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-				setbuf(stdin, 0);	
+				fflush(stdin);	
 				scanf("%i",&escolha);
 				if (escolha == 1)
 				{
 					file=fopen("C:\\Users\\helys\\Desktop\\conversor\\caminho.txt","w");	
 					fprintf(file, "%s", caminho);
-
+					fclose(file);
+					printf("\nSalvando....");
 					string = strdup(docx);
 					return string;
-
 				}else if(escolha == 2){
 					menu_conversor();
 				}
-
-
 				break;
 			case 6:
-				
+				return(0);
 				break;				
 			default:
 
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
-				printf("\t\t\t\t\t\t\t\t\tOpção invalida !");
+				printf("\t\t\t\t\t\t\t\t\tOpcao invalida !");
 				Sleep(3000);
 				system("cls");
 				system("color 0F");
 				menu_conversor();	
 			}
-
 }
 
 #endif /*CONVERSOR_H*/
