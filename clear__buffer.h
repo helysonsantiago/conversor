@@ -1,5 +1,5 @@
-#ifndef FREE_H
-#define FREE_H
+#ifndef CLEAR__BUFFER_H
+#define CLEAR__BUFFER_H
 
 #include <string.h>
 #include <stdio.h>
@@ -15,4 +15,4 @@ void free_memory( char* ptr){
 
 
 
-#endif /*FREE_H*/
+#endif /*CLEAR__BUFFER_H*/
